@@ -1,22 +1,31 @@
-import React, { useState } from "react";
+import React , { useContext } from "react";
+import Context from "../../Context";
 
 const Created = () => {
-  const [description, setDescription] = useState('');
-  const [gif, setGif] = useState('')
-  const [module, setModule] = useState('fundamentals');
-  const [name, setName] = useState('');
-  const [repository, setRepository ] = useState('');
-  const [videoPlayer, setVideoPlayer] = useState('');
+  const { 
+    description,
+    setDescription,
+    gif,
+    setGif,
+    module,
+    setModule,
+    nameProject,
+    setNameProject,
+    repository,
+    setRepository,
+    videoPlayer,
+    setVideoPlayer,
+   } = useContext(Context);
 
   return (
     <form action="">
       <label>
         NOME:
         <input 
-        value={name}
+        value={nameProject}
         type="text" 
         placeholder="nome do projeto" 
-        onChange={(e) => setName(e.target.value)}
+        onChange={(e) => setNameProject(e.target.value)}
         />
       </label>
 

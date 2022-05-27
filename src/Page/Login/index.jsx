@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import Context from '../../Context/Login'
+import Context from '../../Context'
 import SForm from '../../Style';
 
 import { FaUserAlt, FaEyeSlash } from 'react-icons/fa';
