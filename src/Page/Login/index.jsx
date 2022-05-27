@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { useNavigate } from 'react-router-dom'
 import {SForm} from "../../Style";
 import { FaUserAlt, FaEyeSlash } from "react-icons/fa";
 import { RiQuestionnaireFill } from "react-icons/ri";
@@ -7,6 +8,8 @@ import Context from "../../Context";
 import QuestionModal from "../../Components";
 
 function Login() {
+  const navigate = useNavigate();
+
   const initialState = {
     username: "",
     password: "",
@@ -25,6 +28,7 @@ function Login() {
   }
 
   function handleButton() {
+    navigate('./created');
     // console.log(userData.password.length);
   }
   
