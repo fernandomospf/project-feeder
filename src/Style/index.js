@@ -1,3 +1,7 @@
 import SForm from "./Login-style";
+import QuestionCard from "./QuestionCard";
 
-export default SForm;
+export {
+  SForm,
+  QuestionCard
+};

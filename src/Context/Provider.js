@@ -4,6 +4,7 @@ import Context from "./index";
 function Provider({children}) {
   const [username, setUsename] = useState('');
   const [token, setToken] = useState('');
+  const [isModal, setIsModal] = useState(false)
   const [description, setDescription] = useState('');
   const [gif, setGif] = useState('')
   const [module, setModule] = useState('fundamentals');
@@ -14,6 +15,8 @@ function Provider({children}) {
   const myContext = {
     username,
     setUsename,
+    isModal,
+    setIsModal,
     token,
     setToken,
     description,
