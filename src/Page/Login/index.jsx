@@ -16,6 +16,10 @@ function Login() {
     setToken } = useContext(Context);
   console.log(username)
 
+  function handleInput(event) {
+    console.dir(event.target)
+  }
+
   function handleButton(event) {
     event.preventDefault();
     console.log(event)
@@ -25,7 +29,14 @@ function Login() {
     <SForm>
       <h1>Login</h1>
       <FaUserAlt className='icon-user'/>
-      <input type="email" name="" id="" placeholder='Username...' />
+      <input 
+        type="email" 
+        name={username} 
+        value={username}
+        id="" 
+        placeholder='Username...'
+        onChange={handleInput}
+      />
       <FaEyeSlash className='icon-password'/>
       <input type="password" name="" id="" placeholder='Password' />
       <div>
