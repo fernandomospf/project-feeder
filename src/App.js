@@ -1,11 +1,12 @@
-import Login from './Page';
+import { BrowserRouter as Router } from "react-router-dom";
+import MainRoutes from "./Routes";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <Login />
-    </div>
+    <Router>
+      <MainRoutes />
+    </Router>
   );
-}
+};
 
 export default App;
