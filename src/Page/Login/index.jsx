@@ -1,58 +1,69 @@
-import React, { useState, useContext } from 'react';
-import Context from '../../Context/Login'
-import SForm from '../../Style';
+import React, { useState, useContext } from "react";
+import Context from "../../Context/Login";
+import SForm from "../../Style";
 
-import { FaUserAlt, FaEyeSlash } from 'react-icons/fa';
-import { IoEyeSharp } from 'react-icons/io5';
-
-
+import { FaUserAlt, FaEyeSlash } from "react-icons/fa";
+import { IoEyeSharp } from "react-icons/io5";
 
 function Login() {
-
   const initialState = {
-    username: '',
-    password: '',
+    username: "",
+    password: "",
   };
 
-  
+  const [iconEyes, setIconEyes] = useState(false);
   const [userData, setUserData] = useState(initialState);
-
+ 
   function inputChange(key, value) {
     return setUserData({
       ...userData,
-      [key]: value
-    })
+      [key]: value,
+    });
   }
 
   function handleButton() {
-    console.log(userData)
+    console.log(userData.password.length);
   }
 
   return (
     <SForm>
       <h1>Login</h1>
-      <FaUserAlt className='icon-user'/>
-      <input 
-        type="email" 
-        name='username' 
+      <FaUserAlt className="icon-user" />
+      <input
+        type="text"
+        name="username"
         value={userData.username}
-        placeholder='Username...'
-        onChange={({target: {name, value}}) => inputChange(name, value)}
+        placeholder="Username"
+        onChange={({ target: { name, value } }) => inputChange(name, value)}
       />
-      <FaEyeSlash className='icon-password'/>
-      <input 
-        type="password"
-        name='password' 
+      {
+        iconEyes ? 
+        <IoEyeSharp 
+          className="icon-password"
+          onClick={()=> setIconEyes(!iconEyes)}
+        /> : <FaEyeSlash 
+          className="icon-password"
+          onClick={()=> setIconEyes(!iconEyes)}
+        />      
+      }
+      <input
+        type={!iconEyes ? "password" : "text"}
+        name="password"
         value={userData.password}
-        onChange={({target: {name, value}}) => inputChange(name, value)}
-        placeholder='Password' 
+        onChange={({ target: { name, value } }) => inputChange(name, value)}
+        placeholder="Password"
       />
       <div>
-        <button onClick={handleButton}>Enter</button>
+        <button 
+          onClick={handleButton}
+          disabled={(userData.password.length < 8 || userData.username.length < 3)}
+        >
+          Enter
+        </button>
         <p>Esqueceu a senha?</p>
       </div>
     </SForm>
-  )
+  );
 }
 
-export default Login
+export default Login;

@@ -58,7 +58,7 @@ const SForm = styled.form`
       margin-left: 30%;
 
       :disabled {
-        border: 1px solid black;
+        border: 1px solid red;
         background-color: gray;
         color: white;
       }
