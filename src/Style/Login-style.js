@@ -58,7 +58,7 @@ const SForm = styled.form`
       margin-left: 30%;
 
       :disabled {
-        border: 1px solid black;
+        border: 1px solid red;
         background-color: gray;
         color: white;
       }
@@ -68,6 +68,18 @@ const SForm = styled.form`
     position: absolute;
     top: 50px;
     left: 15px;
+    }
+  }
+
+  .icon-question {
+    position: absolute;
+    font-size: 28px;
+    right: 20px;
+    top: 15px;
+    transition: .2s ease-in-out;
+
+    :hover {
+      transform: scale(.8);
     }
   }
 `;
