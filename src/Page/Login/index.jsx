@@ -3,7 +3,7 @@ import {SForm} from "../../Style";
 import { FaUserAlt, FaEyeSlash } from "react-icons/fa";
 import { RiQuestionnaireFill } from "react-icons/ri";
 import { IoEyeSharp } from "react-icons/io5";
-import Context from "../../Context/Login";
+import Context from "../../Context";
 import QuestionModal from "../../Components";
 
 function Login() {
