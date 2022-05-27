@@ -1,10 +1,10 @@
-// request da api
+// request da api com id
 const api = "https://api.kanye.rest/";
 
-async function getApi() {
-  const resp = await fetch(api)
+async function getApiById() {
+  const response = await fetch(api)
     .then((data) => data.json());
-  return resp;
+  return response;
 };
 
-export default getApi;
+export default getApiById;
