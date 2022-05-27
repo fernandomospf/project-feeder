@@ -70,6 +70,18 @@ const SForm = styled.form`
     left: 15px;
     }
   }
+
+  .icon-question {
+    position: absolute;
+    font-size: 28px;
+    right: 20px;
+    top: 15px;
+    transition: .2s ease-in-out;
+
+    :hover {
+      transform: scale(.8);
+    }
+  }
 `;
 
 export default SForm;

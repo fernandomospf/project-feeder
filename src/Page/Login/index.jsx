@@ -1,8 +1,10 @@
-import React, { useState } from "react";
-import SForm from "../../Style";
-
+import React, { useState, useContext } from "react";
+import {SForm} from "../../Style";
 import { FaUserAlt, FaEyeSlash } from "react-icons/fa";
+import { RiQuestionnaireFill } from "react-icons/ri";
 import { IoEyeSharp } from "react-icons/io5";
+import Context from "../../Context/Login";
+import QuestionModal from "../../Components";
 
 function Login() {
   const initialState = {
@@ -12,7 +14,9 @@ function Login() {
 
   const [iconEyes, setIconEyes] = useState(false);
   const [userData, setUserData] = useState(initialState);
- 
+  const myContext = useContext(Context);
+  const { isModal, setIsModal} = myContext;
+
   function inputChange(key, value) {
     return setUserData({
       ...userData,
@@ -21,11 +25,17 @@ function Login() {
   }
 
   function handleButton() {
-    console.log(userData.password.length);
+    // console.log(userData.password.length);
   }
-
-  return (
+  
+  return myContext.isModal ? (
+    <QuestionModal />
+  ) : (
     <SForm>
+      <RiQuestionnaireFill 
+        className="icon-question" 
+        onClick={() => setIsModal(!isModal)}
+      />
       <h1>Login</h1>
       <FaUserAlt className="icon-user" />
       <input
@@ -35,16 +45,17 @@ function Login() {
         placeholder="Username"
         onChange={({ target: { name, value } }) => inputChange(name, value)}
       />
-      {
-        iconEyes ? 
-        <IoEyeSharp 
+      {iconEyes ? (
+        <IoEyeSharp
           className="icon-password"
-          onClick={()=> setIconEyes(!iconEyes)}
-        /> : <FaEyeSlash 
+          onClick={() => setIconEyes(!iconEyes)}
+        />
+      ) : (
+        <FaEyeSlash
           className="icon-password"
-          onClick={()=> setIconEyes(!iconEyes)}
-        />      
-      }
+          onClick={() => setIconEyes(!iconEyes)}
+        />
+      )}
       <input
         type={!iconEyes ? "password" : "text"}
         name="password"
@@ -53,9 +64,11 @@ function Login() {
         placeholder="Password"
       />
       <div>
-        <button 
+        <button
           onClick={handleButton}
-          disabled={(userData.password.length < 8 || userData.username.length < 3)}
+          disabled={
+            userData.password.length < 8 || userData.username.length < 3
+          }
         >
           Enter
         </button>
