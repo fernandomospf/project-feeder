@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
-import Context from "../../Context/Login";
+import Context from "../../Context";
 import { QuestionCard } from "../../Style";
 
 function QuestionModal() {
