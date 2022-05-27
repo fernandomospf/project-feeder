@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import Context from '../../Context/Login'
 import SForm from '../../Style';
 
@@ -9,20 +9,23 @@ import { IoEyeSharp } from 'react-icons/io5';
 
 function Login() {
 
-  const { 
-    username, 
-    setUsename, 
-    token, 
-    setToken } = useContext(Context);
-  console.log(username)
+  const initialState = {
+    username: '',
+    password: '',
+  };
 
-  function handleInput(event) {
-    console.dir(event.target)
+  
+  const [userData, setUserData] = useState(initialState);
+
+  function inputChange(key, value) {
+    return setUserData({
+      ...userData,
+      [key]: value
+    })
   }
 
-  function handleButton(event) {
-    event.preventDefault();
-    console.log(event)
+  function handleButton() {
+    console.log(userData)
   }
 
   return (
@@ -31,14 +34,19 @@ function Login() {
       <FaUserAlt className='icon-user'/>
       <input 
         type="email" 
-        name={username} 
-        value={username}
-        id="" 
+        name='username' 
+        value={userData.username}
         placeholder='Username...'
-        onChange={handleInput}
+        onChange={({target: {name, value}}) => inputChange(name, value)}
       />
       <FaEyeSlash className='icon-password'/>
-      <input type="password" name="" id="" placeholder='Password' />
+      <input 
+        type="password"
+        name='password' 
+        value={userData.password}
+        onChange={({target: {name, value}}) => inputChange(name, value)}
+        placeholder='Password' 
+      />
       <div>
         <button onClick={handleButton}>Enter</button>
         <p>Esqueceu a senha?</p>
