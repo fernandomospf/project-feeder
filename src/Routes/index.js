@@ -7,9 +7,9 @@ import Search from "../Page/Search";
 const MainRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<Login />} />
-      <Route path="/created" element={<Created />} />
-      <Route path="/search" element={<Search />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/created" element={<Created />} />
+        <Route path="/search" element={<Search />} />
     </Routes>
   );
 };

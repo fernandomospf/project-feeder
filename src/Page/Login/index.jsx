@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import {SForm} from "../../Style";
+import { Link } from 'react-router-dom';
 import { FaUserAlt, FaEyeSlash } from "react-icons/fa";
 import { RiQuestionnaireFill } from "react-icons/ri";
 import { IoEyeSharp } from "react-icons/io5";
@@ -24,8 +25,8 @@ function Login() {
     });
   }
 
-  function handleButton() {
-    // console.log(userData.password.length);
+  function handleButton(event) {
+    event.preventDefault();
   }
   
   return myContext.isModal ? (
@@ -36,7 +37,7 @@ function Login() {
         className="icon-question" 
         onClick={() => setIsModal(!isModal)}
       />
-      <h1>Login</h1>
+      <h1>Feeder</h1>
       <FaUserAlt className="icon-user" />
       <input
         type="text"
@@ -70,8 +71,10 @@ function Login() {
             userData.password.length < 8 || userData.username.length < 3
           }
         >
+          <Link to="/search" />
           Enter
         </button>
+        <p className="create-user">Criar usuário</p>
         <p>Esqueceu a senha?</p>
       </div>
     </SForm>

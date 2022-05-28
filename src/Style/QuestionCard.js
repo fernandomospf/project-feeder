@@ -2,13 +2,14 @@ import styled from 'styled-components';
 
 const QuestionCard = styled.div`
   position: relative;
-  background-color: #fff9f4;
+  background-color: #fff;
   box-shadow: lightgray 1px 1px 10px;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  width: 300px;
-  height: 250px;
+  font-size: 22px;
+  width: 400px;
+  height: 350px;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
@@ -23,11 +24,12 @@ const QuestionCard = styled.div`
   }
 
   article {
-    
-    overflow-y: auto;
+    overflow-y: scroll;
     line-height: 25px;
+    margin-top: 20px;
     width: 80%;
     text-align: left;
+    padding: 10px;
   }
 
   a {

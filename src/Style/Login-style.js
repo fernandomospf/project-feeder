@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 const SForm = styled.form`
   position: relative;
-  background-color: #fff9f4;
+  background-color: #fff;
   box-shadow: lightgray 1px 1px 10px;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  width: 300px;
-  height: 250px;
+  width: 400px;
+  height: 350px;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
@@ -17,11 +17,14 @@ const SForm = styled.form`
 
   h1{
     letter-spacing: 3px;
+    margin-bottom: 30px;
   }
 
   input {
+    height: 5vh;
     width: 70%;
     border: none;
+    font-size: 22px;
     box-shadow: lightgray -1px 2px 8px;
     margin-bottom: 15px;
     border-radius: 5px;
@@ -34,12 +37,13 @@ const SForm = styled.form`
 
   .icon-user, .icon-password {
     position: absolute;
-    top: 75px;
-    left: 55px;
+    font-size: 22px;
+    top: 130px;
+    left: 65px;
   }
 
   .icon-password {
-    top: 120px;
+    top: 190px;
   }
 
   div {
@@ -51,23 +55,37 @@ const SForm = styled.form`
     button {
       border-radius: 5px;
       background-color: #fff9f4;
-      width: 120px;
+      width: 160px;
+      height: 40px;
+      font-size: 20px;
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 2px;
       margin-left: 30%;
 
       :disabled {
-        border: 1px solid red;
+        border: 1px solid;
         background-color: gray;
         color: white;
       }
     }
 
-    p {
-    position: absolute;
-    top: 50px;
-    left: 15px;
+    
+    p, .create-user {
+      position: absolute;
+      cursor: pointer;
+      top: 80px;
+      left: 15px;
+      user-select: none;
+
+      :hover{
+        border-bottom-right-radius :5px ;
+        border-bottom-left-radius: 5px;
+        border-bottom: 1px solid red;
+      }
+    }
+    .create-user {
+      top: 50px;
     }
   }
 
