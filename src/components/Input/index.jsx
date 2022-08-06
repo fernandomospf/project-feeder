@@ -10,12 +10,12 @@ const SInput = styled.input`
       background-color:  transparent;
       border-bottom: 2px groove #ffffff ; 
       margin-bottom:  15px;
+      font-size:  26px;
       font-weight:  600;
       padding-left:  1.8rem;
       color:  #141a29;
       width:  80%;
       outline: none;
-      z-index:  99;
 
       &::placeholder {
         color: #141a29b5;
