@@ -3,12 +3,13 @@ import styled from 'styled-components';
 import { IoExitOutline } from 'react-icons/io5';
 
 const Sheader = styled.header`
-align-items: center;
+  align-items: center;
   background-color:  #f2f2f247;
   font-family: 'Darker Grotesque', sans-serif;
   display: flex;
   height:  60px;
   justify-content: space-around;
+  margin-bottom: 80px;
   position: absolute;
   padding: 5px;
   top: 0px;
@@ -28,6 +29,7 @@ align-items: center;
     color: #f1471f;
     font-size:  28px;
     margin-top:  2px;
+    margin-left:  130px;
   }
 `;
 
