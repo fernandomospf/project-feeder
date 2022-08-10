@@ -17,6 +17,7 @@ const Sheader = styled.header`
 
   h2 {
     display: inline;
+    font-size: 30px;
     text-align: center;
     width: fit-content;
 
@@ -30,6 +31,11 @@ const Sheader = styled.header`
     font-size:  28px;
     margin-top:  2px;
     margin-left:  130px;
+    transition:  all .2s ease-in-out;
+
+    &:active {
+      transform:  scale(.8);
+    }
   }
 `;
 

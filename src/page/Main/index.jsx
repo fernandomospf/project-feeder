@@ -19,7 +19,7 @@ const  Smain = styled.main`
     width:  95vw;
 
     &::placeholder {
-      color:  #ffb700dd;
+      color:  #f2f2f28a;
       letter-spacing: 3px;
       padding-left: 10px;
     }
@@ -28,7 +28,7 @@ const  Smain = styled.main`
   .main__input-btnPlus {
     background-color: #f2f2f276;
     border:  none;
-    color:  #ffb800;
+    color:  #ffd000;
     border-radius:  50%;
     font-size: 32px;
     font-weight: 600;
