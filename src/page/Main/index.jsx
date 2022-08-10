@@ -3,6 +3,7 @@ import Input from '../../components/Input'
 import styled from 'styled-components';
 import Button from '../../components/Button'
 import { BsPlusLg } from 'react-icons/bs';
+import CardProject from '../../components/CardProject';
 
 const  Smain = styled.main`
   padding-top: 40px;
@@ -58,6 +59,11 @@ const  Smain = styled.main`
       }
     }
   }
+
+  .main__section-containerCard {
+    height:  75vh;
+    padding:  10px;
+  }
 `;
 
 export default function Main() {
@@ -67,7 +73,7 @@ export default function Main() {
           className="main__input-search"
           placeholder="Search project"
         />
-        <section className="main__section-container">
+        {/* <section className="main__section-container">
           <p>
               How about inserting a<br/>
                 <span>
@@ -78,6 +84,9 @@ export default function Main() {
           <Button className="main__input-btnPlus">
             <BsPlusLg />
           </Button>
+        </section> */}
+        <section className='main__section-containerCard'>
+          <CardProject />
         </section>
       </Smain>
   )
